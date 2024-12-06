@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ service.name }}{% endblock %}
+
+{% block content %}
+{% include 'messages.html' %}
+<div class="container my-5">
+    <h1>{{ service.name }}</h1>
+    <p>{{ service.description }}</p>
+    <p><strong>Цена:</strong> {{ service.price }} ₽</p>
+    <p><strong>Дата создания:</strong> {{ service.created_at|date:"d.m.Y H:i" }}</p>
+    <p><strong>Последнее обновление:</strong> {{ service.updated_at|date:"d.m.Y H:i" }}</p>
+    <a href="{% url 'service_list' %}" class="btn btn-secondary">Вернуться к списку</a>
+</div>
+{% endblock %}

@@ -1,4 +1,4 @@
-# Insurance Web
+# Dry-Cleaner Web
 
 ## Установка и настройка проекта
 

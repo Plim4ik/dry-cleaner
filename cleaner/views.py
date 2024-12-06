@@ -1,39 +1,40 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Insurance, Request, User
 from django.contrib.auth.decorators import login_required
-from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib import messages
+from .models import Services, Request, User
+
 
 def home(request):
     return render(request, 'index.html')
 
 
-def insurance_list(request):
-    insurances = Insurance.objects.all()
-    return render(request, 'insurance_list.html', {'insurances': insurances})
+def service_list(request):
+    services = Services.objects.all()
+    return render(request, 'services_list.html', {'services': services})
 
-def insurance_detail(request, insurance_id):
-    insurance = get_object_or_404(Insurance, id=insurance_id)
-    return render(request, 'insurance_detail.html', {'insurance': insurance})
 
+def service_detail(request, service_id):
+    service = get_object_or_404(Services, id=service_id)
+    return render(request, 'service_detail.html', {'service': service})
 
 
 @login_required(login_url='login_page_view')
 def create_request(request):
     if request.method == 'POST':
         message = request.POST.get('message')
-        insurance_id = request.POST.get('insurance')
-        insurance = get_object_or_404(Insurance, id=insurance_id)
+        service_id = request.POST.get('service')
+        service = get_object_or_404(Services, id=service_id)
         new_request = Request.objects.create(
             user=request.user,
-            insurance=insurance,
+            service=service,
             message=message
         )
-        messages.success(request, 'Ваша заявка принята.')
+        messages.success(request, 'Ваша заявка на услугу принята.')
         return redirect('home')
 
-    insurances = Insurance.objects.all()
-    return render(request, 'request_form.html', {'insurances': insurances})
+    services = Services.objects.all()
+    return render(request, 'request_form.html', {'services': services})
 
 
 @login_required(login_url='login_page_view')
@@ -49,7 +50,7 @@ def login_page_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        
+
         # Аутентификация пользователя через email
         user = authenticate(request, username=email, password=password)
         if user is not None:
@@ -58,8 +59,9 @@ def login_page_view(request):
             return redirect('my_requests')
         else:
             messages.error(request, 'Неверная почта или пароль.')
-    
+
     return render(request, 'auth/login.html')
+
 
 def register_page_view(request):
     if request.method == 'POST':
@@ -96,6 +98,7 @@ def register_page_view(request):
         return redirect('home')
 
     return render(request, 'auth/register.html')
+
 
 # Выход из системы
 def logout_view(request):
