@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import Insurance, Request, User
+from .models import Services, Request, User
 
 
 # Register your models here.
-@admin.register(Insurance)
+@admin.register(Services)
 class InsuranceAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'created_at', 'updated_at')
     search_fields = ('name', 'price')

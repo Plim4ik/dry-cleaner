@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class InsuranceConfig(AppConfig):
+class CleanerConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'insurance'
+    name = 'cleaner'

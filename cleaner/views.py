@@ -19,8 +19,11 @@ def service_detail(request, service_id):
     return render(request, 'service_detail.html', {'service': service})
 
 
-@login_required(login_url='login_page_view')
 def create_request(request):
+    if not request.user.is_authenticated:
+        messages.info(request, 'Для создания заявки вам необходимо зарегистрироваться или войти.')
+        return redirect('login_page_view')
+
     if request.method == 'POST':
         message = request.POST.get('message')
         service_id = request.POST.get('service')
@@ -37,10 +40,14 @@ def create_request(request):
     return render(request, 'request_form.html', {'services': services})
 
 
-@login_required(login_url='login_page_view')
 def my_requests(request):
+    if not request.user.is_authenticated:
+        messages.info(request, 'Для просмотра заявок вам необходимо зарегистрироваться или войти.')
+        return redirect('login_page_view')
+
     user_requests = Request.objects.filter(user=request.user)
     return render(request, 'my_requests.html', {'requests': user_requests})
+
 
 
 def login_page_view(request):
