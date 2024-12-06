@@ -133,6 +133,5 @@ dmypy.json
 
 #Django
 .DS_Store
-db.sqlite3
 static/
 
