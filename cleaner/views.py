@@ -6,7 +6,8 @@ from .models import Services, Request, User
 
 
 def home(request):
-    return render(request, 'index.html')
+    services = Services.objects.all()
+    return render(request, 'index.html', {'services': services})
 
 
 def service_list(request):

@@ -11,3 +11,7 @@
     background-color: darkred !important;
     border-color: darkred !important;
 }
+
+.bg-primary {
+    background-color: #ff0000 !important;
+}

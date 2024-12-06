@@ -5,78 +5,140 @@
 {% block content %}
 
 {% include 'messages.html' %}
-<div class="container my-5">
-    <div class="text-center">
-        <h1 class="mb-4">Добро пожаловать в нашу химчистку!</h1>
-        <p class="lead">Чистота и свежесть для вашего гардероба и дома.</p>
-        <a href="{% url 'service_list' %}" class="btn btn-primary">Посмотреть все услуги</a>
-    </div>
-</div>
 
-<!-- Блок: Преимущества -->
-<div class="container my-5">
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <i class="bi bi-droplet display-4 text-primary"></i>
-            <h4 class="mt-3">Современные технологии</h4>
-            <p>Используем безопасные и эффективные средства для ухода за тканями.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="bi bi-clock-history display-4 text-success"></i>
-            <h4 class="mt-3">Скорость</h4>
-            <p>Минимальные сроки выполнения заказа без потери качества.</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <i class="bi bi-hand-thumbs-up display-4 text-info"></i>
-            <h4 class="mt-3">Гарантия качества</h4>
-            <p>Мы обеспечиваем идеальную чистоту для вашего гардероба.</p>
-        </div>
+<!-- Hero Section -->
+<header class="bg-primary text-white text-center py-5">
+    <div class="container">
+        <h1 class="display-4 fw-bold">Чистота и свежесть для вашего гардероба</h1>
+        <p class="lead">Профессиональная химчистка в Казани. Мы заботимся о ваших тканях, как о своих.</p>
+        <a href="{% url 'service_list' %}" class="btn btn-light btn-lg mt-3">Посмотреть все услуги</a>
     </div>
-</div>
+</header>
 
-<!-- Объединенный блок: О компании и Почему мы -->
-<div class="container my-5">
-    <div class="row">
-        <!-- О компании -->
-        <div class="col-md-6">
-            <h2>О компании</h2>
-            <p>Наша химчистка — это более 10 лет опыта в заботе о чистоте. Мы обслуживаем тысячи довольных клиентов, помогая им сохранить одежду и текстиль в идеальном состоянии.</p>
-            <p>Мы предоставляем широкий спектр услуг: от чистки одежды и текстиля до профессиональной чистки ковров и мебели.</p>
+<!-- Features Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Наши преимущества</h2>
+            <p class="text-muted">Почему клиенты выбирают нас?</p>
         </div>
-        <!-- Почему мы -->
-        <div class="col-md-6">
-            <h2>Почему мы?</h2>
-            <ul class="list-unstyled">
-                <li><i class="bi bi-check-circle text-success"></i> Используем экологически чистые и гипоаллергенные средства.</li>
-                <li><i class="bi bi-check-circle text-success"></i> Современное оборудование для всех типов тканей.</li>
-                <li><i class="bi bi-check-circle text-success"></i> Удобное расположение и доставка.</li>
-                <li><i class="bi bi-check-circle text-success"></i> Индивидуальный подход к каждому клиенту.</li>
-                <li><i class="bi bi-check-circle text-success"></i> Приятные цены и гибкая система скидок.</li>
-            </ul>
+        <div class="row text-center">
+            <div class="col-md-4">
+                <i class="bi bi-droplet display-3 text-primary"></i>
+                <h5 class="mt-3">Современные технологии</h5>
+                <p>Используем только экологически чистые и безопасные средства.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-clock-history display-3 text-success"></i>
+                <h5 class="mt-3">Скорость</h5>
+                <p>Минимальные сроки выполнения заказа без потери качества.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-shield-check display-3 text-info"></i>
+                <h5 class="mt-3">Гарантия качества</h5>
+                <p>Мы гарантируем идеальную чистоту и свежесть ваших вещей.</p>
+            </div>
         </div>
     </div>
-</div>
+</section>
 
-<!-- Блок: Наша команда -->
-<div class="container my-5 bg-light py-5">
-    <div class="text-center">
-        <h2>Наша команда</h2>
-        <p class="lead">Профессионалы, которые заботятся о вашей одежде.</p>
-    </div>
-    <div class="row">
-        <div class="col-md-4 text-center">
-            <h5>Иван Иванов</h5>
-            <p>Директор химчистки</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <h5>Анна Смирнова</h5>
-            <p>Руководитель отдела обработки тканей</p>
-        </div>
-        <div class="col-md-4 text-center">
-            <h5>Сергей Кузнецов</h5>
-            <p>Специалист по работе с клиентами</p>
+<!-- About and Why Choose Us -->
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <h2 class="fw-bold">О нашей компании</h2>
+                <p>Наша химчистка в Казани предлагает профессиональные услуги по уходу за текстилем и одеждой. Более 10 лет мы помогаем клиентам сохранить их гардероб в идеальном состоянии.</p>
+                <p>Мы предоставляем услуги химчистки одежды, текстиля, ковров и мебели, используя самые современные технологии.</p>
+            </div>
         </div>
     </div>
-</div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Наши услуги</h2>
+            <p class="text-muted">Мы предлагаем широкий спектр услуг для вашего удобства.</p>
+        </div>
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">{{ service.name }}</h5>
+                        <p class="card-text">{{ service.description|truncatechars:100 }}</p>
+                        <a href="{% url 'service_detail' service.id %}" class="btn btn-primary">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Отзывы наших клиентов</h2>
+            <p class="text-muted">Что говорят о нас наши клиенты?</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>Химчистка справилась с пятнами, которые я считал невозможными. Очень доволен!</p>
+                    <footer class="blockquote-footer">Иван, Казань</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>Приятные сотрудники, быстрая работа и отличное качество. Рекомендую!</p>
+                    <footer class="blockquote-footer">Анна, Казань</footer>
+                </blockquote>
+            </div>
+            <div class="col-md-4">
+                <blockquote class="blockquote">
+                    <p>Теперь моя мебель как новая. Спасибо химчистке за отличную работу!</p>
+                    <footer class="blockquote-footer">Сергей, Казань</footer>
+                </blockquote>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Team Section -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-4">
+            <h2 class="fw-bold">Наша команда</h2>
+            <p class="text-muted">Опытные профессионалы, заботящиеся о вашей одежде.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4 text-center">
+                <h5>Иван Иванов</h5>
+                <p>Директор</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h5>Анна Смирнова</h5>
+                <p>Специалист по обработке тканей</p>
+            </div>
+            <div class="col-md-4 text-center">
+                <h5>Сергей Кузнецов</h5>
+                <p>Менеджер по работе с клиентами</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section class="py-5 text-white bg-primary">
+    <div class="container text-center">
+        <h2 class="fw-bold">Готовы начать?</h2>
+        <p class="mb-4">Свяжитесь с нами или оставьте заявку прямо сейчас!</p>
+        <a href="{% url 'create_request' %}" class="btn btn-light btn-lg">Связаться с нами</a>
+    </div>
+</section>
 
 {% endblock %}

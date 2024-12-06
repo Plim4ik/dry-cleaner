@@ -9,11 +9,11 @@
     <form method="post">
         {% csrf_token %}
         <div class="mb-3">
-            <label for="insurance" class="form-label">Выберите страховой продукт</label>
-            <select name="insurance" id="insurance" class="form-select" required>
-                <option value="" disabled selected>Выберите страховой продукт</option>
-                {% for insurance in insurances %}
-                <option value="{{ insurance.id }}">{{ insurance.name }}</option>
+            <label for="service" class="form-label">Выберите услугу химчистки</label>
+            <select name="service" id="service" class="form-select" required>
+                <option value="" disabled selected>Выберите услугу химчистки</option>
+                {% for service in services %}
+                <option value="{{ service.id }}">{{ service.name }}</option>
                 {% endfor %}
             </select>
         </div>

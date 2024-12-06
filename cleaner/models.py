@@ -53,5 +53,5 @@ class Request(models.Model):
         verbose_name_plural = 'Заявки'
 
     def __str__(self):
-        return f"Заявка от {self.user.username} на {self.insurance.name}"
+        return f"Заявка от {self.user.username} на {self.service.name}"
     
